@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -34,22 +37,24 @@ public class LoginController {
      * @return
      */
     @RequestMapping("/login")
-    public ModelAndView login(
+    public String login(
             @RequestParam(value = "username",required = true)String c_username,
-            @RequestParam(value = "password",required = true)String c_password){
-        ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("/login/index");
+            @RequestParam(value = "password",required = true)String c_password,
+            HttpSession session){
         Users users=new Users();
         users.setUsername(c_username);
         users.setPsw(c_password);
         if(loginService.login(users)){
             //登录成功
+            session.setAttribute("user",users);
             System.out.println("登录成功");
         }
         else {
+            session.setAttribute("user",null);
             System.out.println("登录失败");
+            return "forward:/login/index";
         }
+        return "forward:/index/show";
 
-        return modelAndView;
     }
 }
