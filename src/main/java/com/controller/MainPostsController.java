@@ -36,4 +36,21 @@ public class MainPostsController {
         modelAndView.addObject("allPages",pageInfo.getPages());
         return modelAndView;
     }
+
+    /**
+     * 发表主贴
+     * @param c_title
+     * @param c_content
+     * @return
+     */
+    @RequestMapping("/add")
+    public ModelAndView cadd(
+            @RequestParam(value = "title",required = true)String c_title,
+            @RequestParam(value = "content",required = true)String c_content){
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.setViewName("/discuss/index");
+
+
+        return modelAndView;
+    }
 }
