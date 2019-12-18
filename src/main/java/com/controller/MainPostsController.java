@@ -38,7 +38,7 @@ public class MainPostsController {
     }
 
     /**
-     * 发表主贴
+     * 发表主贴(coding)
      * @param c_title
      * @param c_content
      * @return
