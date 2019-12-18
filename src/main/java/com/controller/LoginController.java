@@ -26,7 +26,6 @@ public class LoginController {
     public ModelAndView index(){
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("/login/index");
-
         return modelAndView;
     }
 
@@ -50,7 +49,6 @@ public class LoginController {
             System.out.println("登录成功");
         }
         else {
-            session.setAttribute("user",null);
             System.out.println("登录失败");
             return "forward:/login/index";
         }
