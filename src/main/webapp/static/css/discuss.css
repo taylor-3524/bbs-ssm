@@ -1,0 +1,70 @@
+.wrap{
+    width: 900px;
+    border: 1px;
+    margin: auto;
+}
+.other{
+    overflow: hidden;
+}
+.time,.author{
+    float: right;
+}
+.title{
+    font-size: 15pt;
+    font-weight: bolder;
+}
+body{
+    background-color: aliceblue;
+}
+
+.top{
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    background-color: white;
+}
+.discuss{
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    background-color: white;
+    margin-top: 20px;
+}
+.number{
+    float: left;
+}
+
+.content{
+    min-height: 100px;
+    padding: 10px;
+}
+.other{
+    padding: 10px;
+}
+.bottom{
+    margin-top: 20px;
+    width: 100%;
+}
+.bottom table{
+    width: 100%;
+}
+.bottom textarea{
+    width: 100%;
+    height: 200px;
+}
+
+.bottom input{
+    width: 150px;
+    height: 50px;
+}
+
+.reply table{
+     width: 100%;
+ }
+
+.reply textarea{
+    width: 100%;
+    height: 50px;
+}
+
+ul,li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
