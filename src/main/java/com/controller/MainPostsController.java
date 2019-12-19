@@ -28,8 +28,9 @@ public class MainPostsController {
     @RequestMapping("/show")
     public ModelAndView cshow(
             @RequestParam(value = "nowPage",required = false) Integer c_nowPage
-            /*,HttpSession session*/){
-        /*Users u=(Users) session.getAttribute("user");*/
+            ,HttpSession session){
+        Users u=(Users) session.getAttribute("user");
+        System.out.println(u.getUsername());
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("/mainPosts/index");
         Integer nowPage=1;

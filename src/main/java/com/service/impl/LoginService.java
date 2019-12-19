@@ -24,8 +24,6 @@ public class LoginService implements ILoginService {
             //没有这个用户名
             return false;
         }
-
-
         return users1.get(0).getPsw().equals(users.getPsw());
     }
 }

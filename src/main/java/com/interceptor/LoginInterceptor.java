@@ -23,19 +23,22 @@ public class LoginInterceptor implements HandlerInterceptor {
 
        String url = httpServletRequest.getRequestURI();
        System.out.println("url:"+url);
- /*        if (!url.equals()) {
+         if (!url.equals("/bbs_ssm_war_exploded/login/index")
+         &&!url.equals("/bbs_ssm_war_exploded/login/login")
+         ) {
             //不是登录页面
             HttpSession session = httpServletRequest.getSession();
             if (session.getAttribute("user") != null) {
                 //已登录
                 return true;
             }else {
+                httpServletResponse.sendRedirect(httpServletRequest.getContextPath()+"/login/index");
                 //未登录
                 return false;
             }
-        }*/
+        }
+         //是登录页面
         return true;
-        //只要返回true就404
     }
 
     /**
